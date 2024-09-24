@@ -2,3 +2,44 @@
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
 
+FUNCTION find_path(start_x, start_y, dest_x, dest_y):
+    // Initialize current position
+    current_x = start_x
+    current_y = start_y
+    
+    PRINT "Starting at: (" + current_x + ", " + current_y + ")"
+    
+    // Keep moving until the current position matches the destination
+    WHILE current_x != dest_x OR current_y != dest_y:
+        
+        IF current_x < dest_x:
+            // Move east
+            current_x = current_x + 1
+            PRINT "Move east to (" + current_x + ", " + current_y + ")"
+        
+        ELSE IF current_x > dest_x:
+            // Move west
+            current_x = current_x - 1
+            PRINT "Move west to (" + current_x + ", " + current_y + ")"
+        
+        ELSE IF current_y < dest_y:
+            // Move north
+            current_y = current_y + 1
+            PRINT "Move north to (" + current_x + ", " + current_y + ")"
+        
+        ELSE IF current_y > dest_y:
+            // Move south
+            current_y = current_y - 1
+            PRINT "Move south to (" + current_x + ", " + current_y + ")"
+    
+    // When loop ends, the customer is at the destination
+    PRINT "You have arrived at your destination: (" + dest_x + ", " + dest_y + ")"
+
+
+// Example usage:
+start_x = 0
+start_y = 0
+dest_x = 5
+dest_y = 3
+
+CALL find_path(start_x, start_y, dest_x, dest_y)

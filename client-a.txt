@@ -2,3 +2,35 @@
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
 
+START
+
+    DECLARE a variable type number named numberToGuess
+    DECLARE a variable type number named attempts
+
+    DECLARE FUNCTION random()
+        RETURN a random whole number between 1 and 10
+
+    numberToGuess = CALL random()
+    attempts = 1
+
+    FUNCTION numberSurvey(numberToGuess)
+        Ask to the player for a number between 1 and 10
+        Save the player's answer in a variable type number named playerGuess
+        IF playerGuess == numberToGuess
+            RETURN true
+        ELSE
+            RETURN false
+
+    FUNCTION play()
+        WHILE attempts <= 3
+            DECLARE a variable type boolean named itsRight = CALL numberSurvey(numberToGuess)
+            IF itsRight == false
+                PRINT message "You failed... Try again!"
+                INCREASE attempts by 1  //allows the while to run again with a new value in the variable to be compared
+            ELSE 
+                PRINT message "Great, you did it!"
+                EXIT the function play 
+
+    CALL play()
+
+END
